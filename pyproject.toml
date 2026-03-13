@@ -1,0 +1,26 @@
+[project]
+name = "oberon0-runtime"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "loguru>=0.7.3",
+    "rich>=14.3.3",
+    "typer>=0.24.1",
+    "wasmtime>=42.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "bump-my-version>=1.2.7",
+    "furo>=2025.12.19",
+    "pre-commit>=4.5.1",
+    "pyright>=1.1.408",
+    "pytest>=9.0.2",
+    "ruff>=0.15.6",
+    "sphinx>=9.0.4",
+    "sphinx-design>=0.7.0",
+    "sphinxcontrib-napoleon>=0.7",
+    "sphinxcontrib-typer>=0.8.1",
+]

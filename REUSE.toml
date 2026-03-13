@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "oberon0-runtime"
+SPDX-PackageSupplier = "Jérémy Prin"
+SPDX-PackageDownloadLocation = "https://github.com/"
+
+[[annotations]]
+path = [".gitignore", ".python-version", "uv.lock", "pyproject.toml", ".pre-commit-config.yaml", "README.md", "docs/Makefile", "docs/make.bat", "docs/index.rst"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Jérémy Prin"
+SPDX-License-Identifier = "MIT"
