@@ -29,7 +29,7 @@ from wasmtime import (
     ValType,
 )
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 INT32_SIZE = 4
 INITIAL_STACK_POINTER = 1 << 16

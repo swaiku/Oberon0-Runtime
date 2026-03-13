@@ -1,6 +1,6 @@
 [project]
 name = "oberon0-runtime"
-version = "0.1.2"
+version = "0.1.3"
 description = "Oberon-0 runtime implemented in Python"
 keywords = ["oberon", "runtime", "compiler", "interpreter"]
 readme = "README.md"
@@ -38,7 +38,7 @@ venv = ".venv"
 oberon0-rt = 'oberon0_runtime:app'
 
 [tool.bumpversion]
-current_version = "0.1.2"
+current_version = "0.1.3"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
