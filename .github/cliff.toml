@@ -1,0 +1,33 @@
+[changelog]
+header = "# Changelog\n\n"
+body = """
+{% if version %}## {{ version }} ({{ timestamp | date(format="%d-%m-%Y") }})\n{% endif %}\
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group }}
+{% for commit in commits %}
+- {{ commit.message | trim }} ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/swaiku/Oberon0-Runtime/commit/{{ commit.id }}))\
+{% endfor %}
+{% endfor %}\n
+"""
+trim = true
+
+[git]
+conventional_commits = false
+commit_parsers = [
+  { message = "^(✨|:sparkles:)",       group = "✨ Features" },
+  { message = "^(⚡|:zap:)",            group = "✨ Features" },
+  { message = "^(🐛|:bug:)",            group = "🐛 Bug Fixes" },
+  { message = "^(🚑|:ambulance:)",      group = "🐛 Bug Fixes" },
+  { message = "^(♻️|:recycle:)",        group = "♻️ Refactoring" },
+  { message = "^(📦|:package:)",        group = "📦 Build" },
+  { message = "^(⬆️|:arrow_up:)",       group = "📦 Build" },
+  { message = "^(⬇️|:arrow_down:)",     group = "📦 Build" },
+  { message = "^(📝|:memo:)",           group = "📝 Documentation" },
+  { message = "^(🔧|:wrench:)",         group = "🔧 Configuration" },
+  { message = "^(🔨|:hammer:)",         group = "🔧 Configuration" },
+  { message = "^(✅|:white_check_mark:)", group = "✅ Tests" },
+  { message = "^(🧪|:test_tube:)",      group = "✅ Tests" },
+  { message = "^(🎉|:tada:)",           group = "🎉 Initial" },
+  { message = ".*",                      group = "🔀 Other" },
+]
+tag_pattern = "v[0-9].*"
