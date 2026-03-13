@@ -39,6 +39,11 @@ Modules
 .. toctree::
    :maxdepth: 3
 
+.. automodule:: oberon0_runtime
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Indices and tables
 ==================
 
