@@ -12,7 +12,7 @@
 project = "oberon0-runtime"
 copyright = "2026, Jérémy Prin"
 author = "Jérémy Prin"
-release = "0.1.4"
+release = "0.1.5"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
