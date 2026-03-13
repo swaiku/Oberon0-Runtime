@@ -18,14 +18,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate Changelog
+      - name: Generate Full Changelog
         uses: orhun/git-cliff-action@v4
+        id: git-cliff
         with:
           config: .github/cliff.toml
-          args: --latest --strip header
+          args: --strip header
         env:
           OUTPUT: CHANGELOG.md
           GITHUB_REPO: ${{ github.repository }}
+
+      - name: Commit CHANGELOG.md to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git add CHANGELOG.md
+          git diff --staged --quiet || git commit -m "📝 Update CHANGELOG for ${{ github.ref_name }}"
+          git push origin main
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
