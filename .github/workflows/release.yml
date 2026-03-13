@@ -1,8 +1,6 @@
 # SPDX-FileCopyrightText: 2026 Jérémy Prin
 # SPDX-License-Identifier: MIT OR Apache-2.0
-
 name: Release
-
 on:
   push:
     tags:
@@ -10,32 +8,43 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
-  release:
-    name: Build & Release
+  changelog:
+    name: Update Changelog
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Generate Gitmoji Changelog
-        uses: sercanuste/gitmoji-changelog-action@v1.0.0
+      - name: Changelog CI
+        uses: saadmk11/changelog-ci@v1.2.0
         with:
-          preset: python
+          release_version: ${{ github.ref_name }}
+          config_file: .github/changelog-ci-config.yml
+          changelog_filename: CHANGELOG.md
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          committer_username: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
 
+  release:
+    name: Build & Release
+    runs-on: ubuntu-latest
+    needs: changelog
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
       - name: Install uv
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-
       - name: Set up Python
         run: uv python install 3.11
-
       - name: Build package
         run: uv build
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:

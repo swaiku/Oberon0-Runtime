@@ -5,6 +5,12 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
+  - repo: https://github.com/HomerusJa/gitmoji-pre-commit
+    rev: v1.0.0
+    hooks:
+      - id: gitmoji-pre-commit
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.15.0
     hooks:
