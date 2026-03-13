@@ -13,10 +13,6 @@ repos:
     rev: v1.1.408
     hooks:
       - id: pyright
-  # - repo: https://github.com/pre-commit/mirrors-mypy
-  #   rev: v1.19.1
-  #   hooks:
-  #     - id: mypy
   - repo: https://github.com/fsfe/reuse-tool
     rev: v6.2.0
     hooks:
