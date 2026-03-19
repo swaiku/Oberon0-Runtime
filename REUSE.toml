@@ -1,10 +1,10 @@
 version = 1
 SPDX-PackageName = "oberon0-runtime"
 SPDX-PackageSupplier = "Jérémy Prin"
-SPDX-PackageDownloadLocation = "https://github.com/"
+SPDX-PackageDownloadLocation = "https://github.com/swaiku/Oberon0-Runtime"
 
 [[annotations]]
-path = [".gitignore", ".python-version","uv.lock", "pyproject.toml", "CHANGELOG.md", ".pre-commit-config.yaml", ".github/cliff.toml", "README.md", "docs/Makefile", "docs/make.bat", "docs/index.rst"]
+path = [".gitignore","examples/*", ".python-version","uv.lock", "pyproject.toml", "CHANGELOG.md", ".pre-commit-config.yaml", ".github/cliff.toml", "README.md", "docs/Makefile", "docs/make.bat", "docs/index.rst"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Jérémy Prin"
 SPDX-License-Identifier = "MIT"
