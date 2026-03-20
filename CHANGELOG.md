@@ -1,9 +1,18 @@
-## v0.1.5 (13-03-2026)
+## v0.1.6 (20-03-2026)
 
 ### ✨ Features
 
 - ✨ Switch CI to git-cliff for changelog generation ([eb87123](https://github.com/swaiku/Oberon0-Runtime/commit/eb87123a7258733c0cd81fd8d288a150c4736d2f))
 - ✨ Generate and auto-commit full changelog ([8e96406](https://github.com/swaiku/Oberon0-Runtime/commit/8e964061b49b2b1fcd4308664aa535553df314ea))
+
+### 🐛 Bug Fixes
+
+- 🐛 Change wasm type to Path to resolve precompletion ([bd71b25](https://github.com/swaiku/Oberon0-Runtime/commit/bd71b252b1378de3cda50edd4cc12edfc549d87b))
+
+### 📝 Documentation
+
+- 📝 Update CHANGELOG for v0.1.5 ([2b0ec56](https://github.com/swaiku/Oberon0-Runtime/commit/2b0ec566683b18ebcb32dea6de16896b44806527))
+- 📝 Add url to github ([cd34c8f](https://github.com/swaiku/Oberon0-Runtime/commit/cd34c8f6e30af5664d9719096c0ff78e5e30fec1))
 
 ### 🔀 Other
 
@@ -12,7 +21,8 @@
 
 🔀 [Changelog CI] Add Changelog for Version v0.1.3 ([201ec15](https://github.com/swaiku/Oberon0-Runtime/commit/201ec153a8c3cdd9493e21c3749e0f01eaa78481))
 - 🔖 Bump version: 0.1.3 -> 0.1.4 ([478103b](https://github.com/swaiku/Oberon0-Runtime/commit/478103b99e2e7ed5a30614f28a7d35758d4c823c))
-- 🔖 Bump version: 0.1.4 -> 0.1.5 ([08e81ca](https://github.com/swaiku/Oberon0-Runtime/commit/08e81ca36bf45eb588f641b35a0ec995f692e4fb))
+- 🔖 Bump version: 0.1.4 -> 0.1.5 ([363aee8](https://github.com/swaiku/Oberon0-Runtime/commit/363aee82bbc8cc6bb04750bb976cc806c61808d7))
+- 🔖 Bump version: 0.1.5 -> 0.1.6 ([fa2ab3b](https://github.com/swaiku/Oberon0-Runtime/commit/fa2ab3be78b217bb268c53e96e7cdca5bdcde3e5))
 
 ## v0.1.3 (13-03-2026)
 
