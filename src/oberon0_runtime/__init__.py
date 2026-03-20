@@ -9,6 +9,7 @@ Oberon0 runtime for WASM module
 import sys
 from dataclasses import dataclass, field
 from enum import Enum
+from pathlib import Path
 from typing import Annotated
 
 import typer
@@ -152,7 +153,7 @@ def version() -> None:
 
 @app.command()
 def run(
-    wasm_file: Annotated[typer.FileBinaryRead, typer.Argument()],
+    wasm_file: Annotated[Path, typer.Argument()],
     command: Annotated[str, typer.Argument()],
     numbers: Annotated[list[int] | None, typer.Argument()] = None,
     debug: bool = False,
@@ -172,7 +173,8 @@ def run(
     context.store = Store()
 
     try:
-        module = Module(context.store.engine, wasm_file.read())
+        f = open(wasm_file, "rb")
+        module = Module(context.store.engine, f.read())
     except FileNotFoundError:
         print(f"[bold red]Error: WASM file '{wasm_file.name}' not found[/bold red]")
         raise typer.Exit(code=_ReturnCode.FILE_NOT_FOUND.value) from None
